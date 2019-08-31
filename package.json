@@ -1,0 +1,53 @@
+{
+  "name": "franz",
+  "version": "0.0.0",
+  "description": "franz",
+  "main": "index.js",
+  "repository": "kinche/franz",
+  "author": "kinche",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "type-check": "tsc",
+    "lint": "xo",
+    "test": "echo :)"
+  },
+  "dependencies": {
+    "next": "^9.0.5",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "eslint-config-prettier": "^6.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "husky": "^3.0.4",
+    "lint-staged": "^9.2.5",
+    "prettier": "^1.18.2",
+    "typescript": "^3.6.2",
+    "xo": "^0.24.0"
+  },
+  "xo": {
+    "extends": [
+      "prettier",
+      "prettier/react",
+      "plugin:react/recommended"
+    ]
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --semi false --single-quote --write",
+      "yarn lint",
+      "yarn test",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
