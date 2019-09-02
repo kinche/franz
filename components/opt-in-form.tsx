@@ -10,7 +10,7 @@ const OptInForm = () => {
     <form onSubmit={submit}>
       <div className="form-content">
         <Choose>
-          <Choose.When condition={true}>
+          <Choose.When condition={state.succeeded}>
             <h2>Thanks for joining our beta list! We'll contact you soon.</h2>
           </Choose.When>
 
