@@ -2,6 +2,9 @@
 import React, { Component, Fragment } from 'react'
 import Head from 'next/head'
 
+// Root
+import pkg from '../package.json'
+
 interface PageProps {
   children: any
 }
@@ -13,7 +16,9 @@ class Page extends Component<PageProps> {
     return (
       <Fragment>
         <Head>
-          <title>franz — benchmark analytics</title>
+          <title>
+            {pkg.name} — {pkg.description}
+          </title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta charSet="utf-8" />
 
