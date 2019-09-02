@@ -6,8 +6,6 @@ import { Choose } from 'react-extras'
 const OptInForm = () => {
   const [state, submit] = useForm(process.env.STATICKIT_ID)
 
-  console.log({ state })
-
   return (
     <form onSubmit={submit}>
       <div className="form-content">
