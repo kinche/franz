@@ -21,6 +21,8 @@ class Page extends Component<PageProps> {
             href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap"
             rel="stylesheet"
           />
+
+          <link rel="icon" href="/static/favicon.png" type="image/png" />
         </Head>
 
         {children}
@@ -39,6 +41,23 @@ class Page extends Component<PageProps> {
             -moz-osx-font-smoothing: grayscale;
             text-rendering: optimizeLegibility;
             font-feature-settings: 'liga';
+          }
+
+          img {
+            max-width: 100%;
+          }
+
+          a {
+            color: #0045ff;
+            text-decoration: none;
+          }
+
+          a:hover {
+            text-decoration: underline;
+          }
+
+          fieldset {
+            border: 0;
           }
         `}</style>
       </Fragment>
