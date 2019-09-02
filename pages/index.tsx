@@ -7,6 +7,9 @@ import Page from '../layouts/page'
 // Components
 import OptInForm from '../components/opt-in-form'
 
+// UI
+import { responsive } from '../ui/theme'
+
 class Home extends Component {
   render() {
     return (
@@ -14,11 +17,7 @@ class Home extends Component {
         <main>
           <div className="content">
             <div className="content-left">
-              <h1>
-                franz is the first
-                <br />
-                benchmark analytics.
-              </h1>
+              <h1>franz is the first benchmark analytics.</h1>
 
               <h2>
                 franz runs and analyses your benchmarks as part of your CI pipeline so that you'll
@@ -36,10 +35,10 @@ class Home extends Component {
 
         <style jsx={true}>{`
           main {
-            padding: 200px;
             display: flex;
             align-items: center;
             height: 100vh;
+            padding: 32px;
           }
 
           .content {
@@ -49,9 +48,12 @@ class Home extends Component {
             width: 100%;
           }
 
-          .content-left,
+          .content-left {
+            flex-basis: 100%;
+          }
+
           .content-right {
-            flex-basis: 50%;
+            display: none;
           }
 
           h1 {
@@ -67,6 +69,31 @@ class Home extends Component {
             margin-top: 24px;
             margin-bottom: 40px;
             color: #777;
+          }
+
+          @media ${responsive.small} {
+            main {
+              padding: 48px;
+            }
+
+            .content-left,
+            .content-right {
+              flex-basis: 50%;
+            }
+
+            .content-right {
+              display: block;
+            }
+
+            h1 {
+              max-width: 600px;
+            }
+          }
+
+          @media ${responsive.large} {
+            main {
+              padding: 80px;
+            }
           }
         `}</style>
       </Page>
