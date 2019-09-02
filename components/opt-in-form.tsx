@@ -3,6 +3,9 @@ import React from 'react'
 import { useForm } from '@statickit/react'
 import { Choose } from 'react-extras'
 
+// UI
+import { responsive } from '../ui/theme'
+
 const OptInForm = () => {
   const [state, submit] = useForm(process.env.STATICKIT_ID)
 
@@ -20,9 +23,7 @@ const OptInForm = () => {
               <input type="email" name="email" placeholder="Email address" />
             </div>
 
-            <button type="submit" style={{ marginLeft: '16px' }}>
-              Join beta list
-            </button>
+            <button type="submit">Join beta list</button>
           </Choose.Otherwise>
         </Choose>
       </div>
@@ -43,6 +44,7 @@ const OptInForm = () => {
           display: flex;
           align-items: flex-end;
           justify-content: space-between;
+          flex-wrap: wrap;
         }
 
         .text-field {
@@ -67,7 +69,6 @@ const OptInForm = () => {
         }
 
         button {
-          display: inline-block;
           font-size: 18px;
           padding: 16px 24px;
           color: #fff;
@@ -76,6 +77,13 @@ const OptInForm = () => {
           white-space: nowrap;
           cursor: pointer;
           border: 1px solid #0045ff;
+          width: 100%;
+          text-align: center;
+          display: block;
+          margin-left: 0;
+          margin-right: 0;
+          margin-top: 24px;
+          margin-bottom: 24px;
         }
 
         span {
@@ -89,6 +97,22 @@ const OptInForm = () => {
         a {
           font-style: italic;
           font-size: 16px;
+        }
+
+        @media ${responsive.small} {
+          .form-content {
+            flex-wrap: nowrap;
+          }
+
+          .text-field {
+            margin-right: 16px;
+          }
+
+          button {
+            display: inline-block;
+            margin: 0;
+            width: auto;
+          }
         }
       `}</style>
     </form>
