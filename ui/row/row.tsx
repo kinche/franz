@@ -1,9 +1,7 @@
 import React, { PureComponent } from 'react'
 
-interface RowProps {
-  children: any
-  style?: React.CSSProperties
-}
+// Interface
+import { RowProps } from './row.interface'
 
 export class Row extends PureComponent<RowProps> {
   render() {
