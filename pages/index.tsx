@@ -21,7 +21,7 @@ class Home extends Component {
               </h1>
 
               <h2>
-                franz runs and analyses your benchmarks as part of your CI pipeline, so that you'll
+                franz runs and analyses your benchmarks as part of your CI pipeline so that you'll
                 be able to spot and alert on performance variations throughout time.
               </h2>
 
