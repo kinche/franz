@@ -1,21 +1,32 @@
 // Packages
 import React from 'react'
 import { useForm } from '@statickit/react'
+import { Choose } from 'react-extras'
 
 const OptInForm = () => {
   const [state, submit] = useForm(process.env.STATICKIT_ID)
 
+  console.log({ state })
+
   return (
     <form onSubmit={submit}>
       <div className="form-content">
-        <div className="text-field">
-          <label htmlFor="email">Email</label>
-          <input type="email" name="email" placeholder="Email address" />
-        </div>
+        <Choose>
+          <Choose.When condition={true}>
+            <h2>Thanks for joining our beta list! We'll contact you soon.</h2>
+          </Choose.When>
 
-        <button type="submit" style={{ marginLeft: '16px' }}>
-          Join beta list
-        </button>
+          <Choose.Otherwise>
+            <div className="text-field">
+              <label htmlFor="email">Email</label>
+              <input type="email" name="email" placeholder="Email address" />
+            </div>
+
+            <button type="submit" style={{ marginLeft: '16px' }}>
+              Join beta list
+            </button>
+          </Choose.Otherwise>
+        </Choose>
       </div>
 
       <span>
