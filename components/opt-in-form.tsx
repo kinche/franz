@@ -34,10 +34,6 @@ const OptInForm = () => {
       </span>
 
       <style jsx={true}>{`
-        form {
-          max-width: 600px;
-        }
-
         .form-content {
           border: 0;
           width: 100%;
