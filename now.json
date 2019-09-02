@@ -3,5 +3,11 @@
   "alias": "franz.kinche.co",
   "scope": "bukinoshita",
   "version": 2,
-  "builds": [{ "src": "next.config.js", "use": "@now/next" }]
+  "builds": [{ "src": "next.config.js", "use": "@now/next" }],
+  "build": {
+    "env": {
+      "STATICKIT_ID": "@franz-statickit-id",
+      "AUTHENTICATION_SERVICE": "@franz-authentication-service"
+    }
+  }
 }
