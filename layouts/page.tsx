@@ -9,6 +9,18 @@ interface PageProps {
   children: any
 }
 
+if ('document' in global) {
+  const info = [
+    `Version: ${pkg.version}`,
+    `Find the code here: https://github.com/${pkg.repository}`,
+    `Have a great day! 🎉`
+  ]
+
+  for (const message of info) {
+    console.log(message)
+  }
+}
+
 class Page extends Component<PageProps> {
   render() {
     const { children } = this.props
@@ -21,6 +33,20 @@ class Page extends Component<PageProps> {
           </title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta charSet="utf-8" />
+          <meta name="theme-color" content="#0045ff" />
+          <meta name="description" content={pkg.description} />
+          <meta name="keywords" content={pkg.keywords.join(',')} />
+
+          <meta name="twitter:title" content={pkg.name} />
+          <meta name="twitter:description" content={pkg.description} />
+          <meta name="twitter:image" content="https://franz.kinche.co/static/cover.png" />
+          <meta name="twitter:card" content="summary_large_image" />
+
+          <meta property="og:title" content={pkg.name} />
+          <meta property="og:description" content={pkg.description} />
+          <meta property="og:image" content="https://franz.kinche.co/static/cover.png" />
+          <meta property="og:url" content="https://franz.kinche.co" />
+          <meta property="og:type" content="website" />
 
           <link
             href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap"
@@ -28,6 +54,7 @@ class Page extends Component<PageProps> {
           />
 
           <link rel="icon" href="/static/favicon.png" type="image/png" />
+          <link rel="apple-touch-icon" href="/static/icon.png" />
         </Head>
 
         {children}
