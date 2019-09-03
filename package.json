@@ -6,6 +6,15 @@
   "repository": "kinche/franz",
   "author": "kinche",
   "license": "MIT",
+  "keywords": [
+    "kinche",
+    "franz",
+    "benchmark",
+    "bench",
+    "analytics",
+    "ci",
+    "continuous integration"
+  ],
   "scripts": {
     "dev": "next",
     "build": "next build",
