@@ -24,6 +24,8 @@ if ('document' in global) {
 class Page extends Component<PageProps> {
   render() {
     const { children } = this.props
+    const description =
+      "franz runs and analyses your benchmarks as part of your CI pipeline so that you'll be able to spot and alert on performance variations throughout time."
 
     return (
       <Fragment>
@@ -34,16 +36,16 @@ class Page extends Component<PageProps> {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta charSet="utf-8" />
           <meta name="theme-color" content="#0045ff" />
-          <meta name="description" content={pkg.description} />
+          <meta name="description" content={description} />
           <meta name="keywords" content={pkg.keywords.join(',')} />
 
-          <meta name="twitter:title" content={pkg.name} />
-          <meta name="twitter:description" content={pkg.description} />
+          <meta name="twitter:title" content={`${pkg.name} — ${pkg.description}`} />
+          <meta name="twitter:description" content={description} />
           <meta name="twitter:image" content="https://franz.kinche.co/static/cover.png" />
           <meta name="twitter:card" content="summary_large_image" />
 
-          <meta property="og:title" content={pkg.name} />
-          <meta property="og:description" content={pkg.description} />
+          <meta property="og:title" content={`${pkg.name} — ${pkg.description}`} />
+          <meta property="og:description" content={description} />
           <meta property="og:image" content="https://franz.kinche.co/static/cover.png" />
           <meta property="og:url" content="https://franz.kinche.co" />
           <meta property="og:type" content="website" />
