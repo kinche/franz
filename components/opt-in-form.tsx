@@ -20,7 +20,7 @@ const OptInForm = () => {
           <Choose.Otherwise>
             <div className="text-field">
               <label htmlFor="email">Email</label>
-              <input type="email" name="email" placeholder="Email address" />
+              <input id="email" type="email" name="email" placeholder="Email address" />
             </div>
 
             <button type="submit">Join beta list</button>
