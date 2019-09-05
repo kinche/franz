@@ -40,7 +40,7 @@ class Home extends Component {
           main {
             display: flex;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
           }
 
           .content {
@@ -48,6 +48,8 @@ class Home extends Component {
             align-items: center;
             justify-content: space-between;
             width: 100%;
+            padding-top: 48px;
+            padding-bottom: 48px;
           }
 
           .content-left {
