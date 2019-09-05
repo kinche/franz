@@ -30,7 +30,7 @@ class Home extends Component {
               </div>
 
               <div className="content-right">
-                <img src="static/product.png" />
+                <img src="static/product.png" alt="github pull request status" />
               </div>
             </div>
           </Row>
