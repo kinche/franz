@@ -9,7 +9,7 @@ import OptInForm from '../components/opt-in-form'
 
 // UI
 import { Row } from '../ui/row'
-import { responsive } from '../ui/theme'
+import { colors, responsive } from '../ui/theme'
 
 class Home extends Component {
   render() {
@@ -62,7 +62,7 @@ class Home extends Component {
           h1 {
             font-size: 50px;
             font-weight: 400;
-            color: #222;
+            color: ${colors.gray.darker};
           }
 
           h2 {
@@ -70,7 +70,7 @@ class Home extends Component {
             line-height: 34px;
             margin-top: 24px;
             margin-bottom: 40px;
-            color: #777;
+            color: ${colors.gray.default};
           }
 
           @media ${responsive.small} {
