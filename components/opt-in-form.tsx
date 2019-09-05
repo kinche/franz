@@ -4,7 +4,7 @@ import { useForm } from '@statickit/react'
 import { Choose } from 'react-extras'
 
 // UI
-import { responsive } from '../ui/theme'
+import { colors, responsive } from '../ui/theme'
 
 const OptInForm = () => {
   const [state, submit] = useForm(process.env.STATICKIT_ID)
@@ -51,14 +51,14 @@ const OptInForm = () => {
           font-size: 14px;
           font-weight: 600;
           display: block;
-          color: #777;
+          color: ${colors.gray.default};
           margin-bottom: 4px;
         }
 
         input {
           width: 100%;
           padding: 16px;
-          border: 1px solid #dddfe4;
+          border: 1px solid ${colors.gray.lighter};
           border-radius: 6px;
           font-size: 18px;
           outline: none;
@@ -67,12 +67,12 @@ const OptInForm = () => {
         button {
           font-size: 18px;
           padding: 16px 24px;
-          color: #fff;
-          background-color: #0045ff;
+          color: ${colors.white};
+          background-color: ${colors.primary.default};
           border-radius: 6px;
           white-space: nowrap;
           cursor: pointer;
-          border: 1px solid #0045ff;
+          border: 1px solid ${colors.primary.default};
           width: 100%;
           text-align: center;
           display: block;
@@ -87,7 +87,7 @@ const OptInForm = () => {
           margin-top: 16px;
           font-style: italic;
           font-size: 16px;
-          color: #777;
+          color: ${colors.gray.default};
         }
 
         a {

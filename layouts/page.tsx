@@ -4,6 +4,7 @@ import Head from 'next/head'
 
 // Root
 import pkg from '../package.json'
+import { colors } from '../ui/theme'
 
 interface PageProps {
   children: any
@@ -35,7 +36,7 @@ class Page extends Component<PageProps> {
           </title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta charSet="utf-8" />
-          <meta name="theme-color" content="#0045ff" />
+          <meta name="theme-color" content={colors.primary.default} />
           <meta name="description" content={description} />
           <meta name="keywords" content={pkg.keywords.join(',')} />
 
@@ -82,7 +83,7 @@ class Page extends Component<PageProps> {
           }
 
           a {
-            color: #0045ff;
+            color: ${colors.primary.default};
             text-decoration: none;
           }
 
