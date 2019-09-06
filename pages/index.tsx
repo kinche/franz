@@ -19,7 +19,7 @@ class Home extends Component {
           <Row>
             <div className="content">
               <div className="content-left">
-                <h1>franz is the first benchmark analytics.</h1>
+                <h1>franz is the first benchmark analytics platform.</h1>
 
                 <h2>
                   franz runs and analyses your benchmarks as part of your CI pipeline so that you'll
