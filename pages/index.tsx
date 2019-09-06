@@ -9,7 +9,7 @@ import OptInForm from '../components/opt-in-form'
 
 // UI
 import { Row } from '../ui/row'
-import { colors, responsive } from '../ui/theme'
+import { colors, responsive, spacing } from '../ui/theme'
 
 class Home extends Component {
   render() {
@@ -48,8 +48,8 @@ class Home extends Component {
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            padding-top: 48px;
-            padding-bottom: 48px;
+            padding-top: ${spacing.xxxLarge};
+            padding-bottom: ${spacing.xxxLarge};
           }
 
           .content-left {
@@ -70,8 +70,8 @@ class Home extends Component {
           h2 {
             font-size: 20px;
             line-height: 34px;
-            margin-top: 24px;
-            margin-bottom: 40px;
+            margin-top: ${spacing.large};
+            margin-bottom: ${spacing.xxLarge};
             color: ${colors.gray.default};
           }
 
