@@ -2,7 +2,7 @@
 
 exports[`Row should render row 1`] = `
 <div
-  className="jsx-3537277230"
+  className="jsx-2953685289"
   style={
     Object {
       "margin": "auto",

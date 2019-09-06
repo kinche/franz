@@ -4,7 +4,7 @@ import { useForm } from '@statickit/react'
 import { Choose } from 'react-extras'
 
 // UI
-import { colors, radius, responsive } from '../ui/theme'
+import { colors, radius, responsive, spacing } from '../ui/theme'
 
 const OptInForm = () => {
   const [state, submit] = useForm(process.env.STATICKIT_ID)
@@ -52,12 +52,12 @@ const OptInForm = () => {
           font-weight: 600;
           display: block;
           color: ${colors.gray.default};
-          margin-bottom: 4px;
+          margin-bottom: ${spacing.small};
         }
 
         input {
           width: 100%;
-          padding: 16px;
+          padding: ${spacing.medium};
           border: 1px solid ${colors.gray.lighter};
           border-radius: ${radius.medium};
           font-size: 18px;
@@ -66,7 +66,7 @@ const OptInForm = () => {
 
         button {
           font-size: 18px;
-          padding: 16px 24px;
+          padding: ${spacing.medium} ${spacing.large};
           color: ${colors.white};
           background-color: ${colors.primary.default};
           border-radius: ${radius.medium};
@@ -78,13 +78,13 @@ const OptInForm = () => {
           display: block;
           margin-left: 0;
           margin-right: 0;
-          margin-top: 24px;
-          margin-bottom: 24px;
+          margin-top: ${spacing.large};
+          margin-bottom: ${spacing.large};
         }
 
         span {
           display: block;
-          margin-top: 16px;
+          margin-top: ${spacing.medium};
           font-style: italic;
           font-size: 16px;
           color: ${colors.gray.default};
@@ -101,7 +101,7 @@ const OptInForm = () => {
           }
 
           .text-field {
-            margin-right: 16px;
+            margin-right: ${spacing.medium};
           }
 
           button {
