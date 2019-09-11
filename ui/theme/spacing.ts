@@ -5,5 +5,9 @@ export const spacing = {
   large: '24px',
   xLarge: '32px',
   xxLarge: '40px',
-  xxxLarge: '48px'
+  xxxLarge: '48px',
+  huge: '56px',
+  xHuge: '64px',
+  xxHuge: '72px',
+  xxxHuge: '80px'
 }
