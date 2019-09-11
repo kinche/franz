@@ -1,12 +1,12 @@
 // Packages
 import React from 'react'
-import { useForm } from '@statickit/react'
 import { Choose } from 'react-extras'
+import { useForm } from '@statickit/react'
 
 // UI
-import { colors, radius, responsive, spacing } from '../ui/theme'
+import { colors, radius, responsive, spacing } from '../../ui/theme'
 
-const OptInForm = () => {
+export const OptInForm = () => {
   const [state, submit] = useForm(process.env.STATICKIT_ID)
 
   return (
@@ -27,11 +27,6 @@ const OptInForm = () => {
           </Choose.Otherwise>
         </Choose>
       </div>
-
-      <span>
-        If you already have an account,{' '}
-        <a href={`${process.env.AUTHENTICATION_SERVICE}/auth/github`}>sign in here</a>.
-      </span>
 
       <style jsx={true}>{`
         .form-content {
@@ -65,7 +60,8 @@ const OptInForm = () => {
         }
 
         button {
-          font-size: 18px;
+          font-size: 16px;
+          line-height: 26px;
           padding: ${spacing.medium} ${spacing.large};
           color: ${colors.white};
           background-color: ${colors.primary.default};
@@ -114,5 +110,3 @@ const OptInForm = () => {
     </form>
   )
 }
-
-export default OptInForm
