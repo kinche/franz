@@ -17,4 +17,4 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: yarn build
       - run: sudo npm install --global --unsafe-perm now
-      - run: now --token $ZEIT_TOKEN --target=production
+      - run: now --token $ZEIT_TOKEN --target=staging
