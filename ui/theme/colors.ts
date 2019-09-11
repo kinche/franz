@@ -8,5 +8,7 @@ export const colors = {
     default: '#777677',
     darker: '#222222',
     lighter: '#dddfe4'
-  }
+  },
+  title: '#444444',
+  text: '#869ab8'
 }
