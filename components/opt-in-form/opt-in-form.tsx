@@ -5,7 +5,8 @@ import { useForm } from '@statickit/react'
 
 // UI
 import { Button } from '../../ui/button'
-import { colors, radius, responsive, spacing } from '../../ui/theme'
+import { Input } from '../../ui/text-field'
+import { responsive, spacing } from '../../ui/theme'
 
 // Utils
 import { SIZE_LARGE } from '../../utils/constants'
@@ -22,10 +23,13 @@ export const OptInForm = () => {
           </Choose.When>
 
           <Choose.Otherwise>
-            <div className="text-field">
-              <label htmlFor="email">Email</label>
-              <input id="email" type="email" name="email" placeholder="Email address" />
-            </div>
+            <Input
+              label="Email"
+              name="email"
+              type="email"
+              placeholder="Email address"
+              style={{ marginRight: spacing.medium }}
+            />
 
             <Button type="submit" size={SIZE_LARGE}>
               Join beta list
@@ -44,53 +48,9 @@ export const OptInForm = () => {
           flex-wrap: wrap;
         }
 
-        .text-field {
-          width: 100%;
-        }
-
-        label {
-          font-size: 14px;
-          font-weight: 600;
-          display: block;
-          color: ${colors.gray.default};
-          margin-bottom: ${spacing.small};
-        }
-
-        input {
-          width: 100%;
-          padding: ${spacing.medium};
-          border: 1px solid ${colors.gray.lighter};
-          border-radius: ${radius.medium};
-          font-size: 18px;
-          outline: none;
-        }
-
-        span {
-          display: block;
-          margin-top: ${spacing.medium};
-          font-style: italic;
-          font-size: 16px;
-          color: ${colors.gray.default};
-        }
-
-        a {
-          font-style: italic;
-          font-size: 16px;
-        }
-
         @media ${responsive.small} {
           .form-content {
             flex-wrap: nowrap;
-          }
-
-          .text-field {
-            margin-right: ${spacing.medium};
-          }
-
-          button {
-            display: inline-block;
-            margin: 0;
-            width: auto;
           }
         }
       `}</style>

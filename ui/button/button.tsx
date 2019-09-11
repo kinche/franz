@@ -3,7 +3,7 @@ import React, { PureComponent } from 'react'
 import classnames from 'classnames'
 
 // UI
-import { colors, radius, spacing } from '../theme'
+import { colors, radius, responsive, spacing } from '../theme'
 
 // Utils
 import {
@@ -48,9 +48,10 @@ export class Button extends PureComponent<ButtonProps> {
             appearance: none;
             border: none;
             background-color: transparent;
-            
             cursor: pointer;
             transition: 0.25s ease-in-out;
+            display: block;
+            width: 100%;
           }
 
           .button {
@@ -86,7 +87,6 @@ export class Button extends PureComponent<ButtonProps> {
             border-color: ${colors.primary.dark};
           }
 
-
           .${APPEARANCE_PRIMARY_SUBTLE} {
             background-color: ${colors.primary.soft};
             color: ${colors.primary.default};
@@ -97,7 +97,14 @@ export class Button extends PureComponent<ButtonProps> {
             background-color: ${colors.primary.lighter};
             color: ${colors.primary.default};
             border-color: ${colors.primary.lighter};
-          }s
+          }
+
+          @media ${responsive.small} {
+            button {
+              display: inline-block;
+              width: auto;
+            }
+          }
         `}</style>
       </button>
     )
