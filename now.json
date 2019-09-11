@@ -9,5 +9,8 @@
       "STATICKIT_ID": "@franz-statickit-id",
       "AUTHENTICATION_SERVICE": "@franz-authentication-service"
     }
+  },
+  "github": {
+    "enabled": false
   }
 }
