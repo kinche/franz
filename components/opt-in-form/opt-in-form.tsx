@@ -4,7 +4,11 @@ import { Choose } from 'react-extras'
 import { useForm } from '@statickit/react'
 
 // UI
+import { Button } from '../../ui/button'
 import { colors, radius, responsive, spacing } from '../../ui/theme'
+
+// Utils
+import { SIZE_LARGE } from '../../utils/constants'
 
 export const OptInForm = () => {
   const [state, submit] = useForm(process.env.STATICKIT_ID)
@@ -23,7 +27,9 @@ export const OptInForm = () => {
               <input id="email" type="email" name="email" placeholder="Email address" />
             </div>
 
-            <button type="submit">Join beta list</button>
+            <Button type="submit" size={SIZE_LARGE}>
+              Join beta list
+            </Button>
           </Choose.Otherwise>
         </Choose>
       </div>
@@ -57,25 +63,6 @@ export const OptInForm = () => {
           border-radius: ${radius.medium};
           font-size: 18px;
           outline: none;
-        }
-
-        button {
-          font-size: 16px;
-          line-height: 26px;
-          padding: ${spacing.medium} ${spacing.large};
-          color: ${colors.white};
-          background-color: ${colors.primary.default};
-          border-radius: ${radius.medium};
-          white-space: nowrap;
-          cursor: pointer;
-          border: 1px solid ${colors.primary.default};
-          width: 100%;
-          text-align: center;
-          display: block;
-          margin-left: 0;
-          margin-right: 0;
-          margin-top: ${spacing.large};
-          margin-bottom: ${spacing.large};
         }
 
         span {
