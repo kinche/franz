@@ -52,7 +52,7 @@ class Page extends Component<PageProps> {
           <meta property="og:type" content="website" />
 
           <link
-            href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap"
+            href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500&display=swap"
             rel="stylesheet"
           />
 
