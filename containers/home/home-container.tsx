@@ -31,6 +31,7 @@ export class HomeContainer extends Component {
             justify-content: space-between;
             align-items: center;
             padding-top: ${spacing.xxxHuge};
+            padding-bottom: ${spacing.xxxHuge};
             flex-wrap: wrap;
           }
 
