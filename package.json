@@ -16,7 +16,7 @@
     "continuous integration"
   ],
   "scripts": {
-    "dev": "next",
+    "dev": "next -p 3001",
     "build": "next build",
     "start": "next start",
     "type-check": "tsc",
@@ -27,6 +27,7 @@
     "@statickit/react": "^1.0.0-beta.2",
     "classnames": "^2.2.6",
     "next": "^9.0.5",
+    "nookies": "^2.0.8",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-extras": "^0.9.0"
