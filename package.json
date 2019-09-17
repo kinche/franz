@@ -1,6 +1,6 @@
 {
   "name": "franz",
-  "version": "0.0.0-canary.0",
+  "version": "0.0.0-canary.1",
   "description": "the first benchmark analytics platform",
   "main": "index.js",
   "repository": "kinche/franz",
