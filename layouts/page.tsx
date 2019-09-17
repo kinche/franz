@@ -93,6 +93,7 @@ class Page extends Component<PageProps> {
 
           fieldset {
             border: 0;
+            width: 100%;
           }
         `}</style>
       </Fragment>
