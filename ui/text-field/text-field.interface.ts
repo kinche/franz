@@ -11,5 +11,5 @@ export interface TextFieldProps {
   readOnly: boolean
   style?: CSSProperties
   type: 'text' | 'email'
-  value?: string
+  value: string
 }

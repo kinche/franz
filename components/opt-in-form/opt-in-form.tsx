@@ -1,5 +1,5 @@
 // Packages
-import React from 'react'
+import React, { useState } from 'react'
 import { Choose } from 'react-extras'
 import { useForm } from '@statickit/react'
 
@@ -12,10 +12,21 @@ import { responsive, spacing } from '../../ui/theme'
 import { SIZE_LARGE } from '../../utils/constants'
 
 export const OptInForm = () => {
+  const [email, onChangeEmail] = useState('')
   const [state, submit] = useForm(process.env.STATICKIT_ID)
 
+  const onInputChange = (e: any) => onChangeEmail(e.target.value)
+
+  const onSubmit = (e: any) => {
+    e.preventDefault()
+
+    if (email.length > 4) {
+      submit(e)
+    }
+  }
+
   return (
-    <form onSubmit={submit}>
+    <form onSubmit={onSubmit}>
       <div className="form-content">
         <Choose>
           <Choose.When condition={state.succeeded}>
@@ -27,7 +38,9 @@ export const OptInForm = () => {
               label="Email"
               name="email"
               type="email"
+              value={email}
               placeholder="Email address"
+              onChange={onInputChange}
               style={{ marginRight: spacing.medium }}
             />
 
