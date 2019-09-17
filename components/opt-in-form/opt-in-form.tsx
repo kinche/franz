@@ -37,15 +37,16 @@ export const OptInForm = () => {
           </Choose.When>
 
           <Choose.Otherwise>
-            <Input
-              label="Email"
-              name="email"
-              type="email"
-              value={email}
-              placeholder="Email address"
-              onChange={onInputChange}
-              style={{ marginRight: spacing.medium }}
-            />
+            <fieldset>
+              <Input
+                label="Email"
+                name="email"
+                type="email"
+                value={email}
+                placeholder="Email address"
+                onChange={onInputChange}
+              />
+            </fieldset>
 
             <Button type="submit" size={SIZE_LARGE}>
               Join beta list
@@ -64,9 +65,18 @@ export const OptInForm = () => {
           flex-wrap: wrap;
         }
 
+        fieldset {
+          margin-bottom: ${spacing.medium};
+        }
+
         @media ${responsive.small} {
           .form-content {
             flex-wrap: nowrap;
+          }
+
+          fieldset {
+            margin-right: ${spacing.medium};
+            margin-bottom: 0;
           }
         }
       `}</style>
