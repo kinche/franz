@@ -31,15 +31,16 @@ export class HomeContainer extends Component {
             justify-content: space-between;
             align-items: center;
             padding-top: ${spacing.xxxHuge};
-            height: 70vh;
+            flex-wrap: wrap;
           }
 
           .hero div {
+            order: 1;
             flex-basis: 100%;
           }
 
           .hero div + div {
-            display: none;
+            order: 0;
           }
 
           @media ${responsive.small} {
@@ -48,7 +49,7 @@ export class HomeContainer extends Component {
             }
 
             .hero div + div {
-              display: block;
+              order: 1;
             }
           }
         `}</style>
