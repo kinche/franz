@@ -19,7 +19,10 @@ export const OptInForm = () => {
       <div className="form-content">
         <Choose>
           <Choose.When condition={state.succeeded}>
-            <h2>Thanks for joining our beta list! We'll contact you soon.</h2>
+            <h2>
+              Thanks for joining our beta list!
+              <br /> We'll contact you soon.
+            </h2>
           </Choose.When>
 
           <Choose.Otherwise>
