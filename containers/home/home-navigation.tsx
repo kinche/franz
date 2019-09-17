@@ -1,28 +1,39 @@
 // Packages
 import React, { Component } from 'react'
+import { autoBind } from 'react-extras'
 
 // Components
 import { Logo } from '../../components/logo'
 
 // UI
-import { ButtonHref } from '../../ui/button'
+import { Button } from '../../ui/button'
 import { spacing } from '../../ui/theme'
 
 // Utils
 import { APPEARANCE_PRIMARY_SUBTLE } from '../../utils/constants'
+import { saveCookie } from '../../utils/cookies'
 
 export class HomeNavigation extends Component {
+  constructor(props: any) {
+    super(props)
+
+    autoBind(this)
+  }
+
+  onSignIn() {
+    saveCookie(process.env.KINCHE_COOKIE_REDIRECT, process.env.FRONTEND_URL)
+    const href = `${process.env.AUTHENTICATION_SERVICE}/auth/github`
+    window.location.href = href
+  }
+
   render() {
     return (
       <header>
         <Logo size="38px" />
 
-        <ButtonHref
-          appearance={APPEARANCE_PRIMARY_SUBTLE}
-          href={`${process.env.AUTHENTICATION_SERVICE}/auth/github`}
-        >
+        <Button type="button" appearance={APPEARANCE_PRIMARY_SUBTLE} onClick={this.onSignIn}>
           Sign in
-        </ButtonHref>
+        </Button>
 
         <style jsx={true}>{`
           header {

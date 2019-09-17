@@ -27,7 +27,7 @@ export class Button extends PureComponent<ButtonProps> {
   }
 
   render() {
-    const { appearance, block, children, disabled, size } = this.props
+    const { appearance, block, children, disabled, onClick, size } = this.props
 
     const className = classnames({
       primary: appearance === APPEARANCE_PRIMARY,
@@ -40,7 +40,7 @@ export class Button extends PureComponent<ButtonProps> {
     })
 
     return (
-      <button className={className} disabled={disabled}>
+      <button className={className} disabled={disabled} onClick={onClick}>
         <div className="button">{children}</div>
 
         <style jsx={true}>{`
