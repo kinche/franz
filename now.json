@@ -9,6 +9,7 @@
       "AUTHENTICATION_SERVICE": "@franz-authentication-service",
       "FRONTEND_URL": "franz-frontend-url",
       "KINCHE_COOKIES_DOMAIN": "@kinche-cookies-domain",
+      "KINCHE_COOKIES_REDIRECT": "@kinche-cookies-redirect",
       "KINCHE_COOKIES_TOKEN": "@kinche-cookies-token",
       "STATICKIT_ID": "@franz-statickit-id"
     }

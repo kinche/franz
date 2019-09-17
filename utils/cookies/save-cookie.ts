@@ -7,7 +7,7 @@ export function saveCookie(name: string, value: any, ctx?: NextPageContext, opti
   const oneDay = date.setDate(date.getDate() + 1)
   const cookieOptions = Object.assign(
     {},
-    { maxAge: oneDay, path: '/', domain: process.env.COOKIES_VALUE },
+    { maxAge: oneDay, path: '/', domain: process.env.KINCHE_COOKIES_DOMAIN },
     options
   )
   setCookie(ctx, name, value, cookieOptions)
