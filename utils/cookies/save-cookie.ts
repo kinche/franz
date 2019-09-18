@@ -10,5 +10,6 @@ export function saveCookie(name: string, value: any, ctx?: NextPageContext, opti
     { maxAge: oneDay, path: '/', domain: process.env.KINCHE_COOKIES_DOMAIN },
     options
   )
+
   setCookie(ctx, name, value, cookieOptions)
 }

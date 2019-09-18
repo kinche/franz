@@ -21,7 +21,7 @@ export class HomeNavigation extends Component {
   }
 
   onSignIn() {
-    saveCookie(process.env.KINCHE_COOKIE_REDIRECT, process.env.FRONTEND_URL)
+    saveCookie(process.env.KINCHE_COOKIES_REDIRECT, process.env.FRONTEND_URL)
     const href = `${process.env.AUTHENTICATION_SERVICE}/auth/github`
     window.location.href = href
   }
