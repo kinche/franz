@@ -50,8 +50,6 @@ export class Button extends PureComponent<ButtonProps> {
             background-color: transparent;
             cursor: pointer;
             transition: 0.25s ease-in-out;
-            display: block;
-            width: 100%;
           }
 
           .button {
