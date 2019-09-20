@@ -98,13 +98,6 @@ export class Button extends PureComponent<ButtonProps> {
             color: ${colors.primary.default};
             border-color: ${colors.primary.lighter};
           }
-
-          @media ${responsive.small} {
-            button {
-              display: inline-block;
-              width: auto;
-            }
-          }
         `}</style>
       </button>
     )
