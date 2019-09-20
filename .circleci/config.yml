@@ -1,20 +1,77 @@
-version: 2
+version: 2.1
 jobs:
-  build:
+  test:
     docker:
-      - image: circleci/node:10.16.0
-    working_directory: ~/repo
+      - image: circleci/node:10.16.3
     steps:
       - checkout
       - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies-
-      - run: yarn install
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Install dependencies
+          command: yarn
+      - run:
+          name: Lint
+          command: yarn lint
       - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
           paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-      - run: yarn build
-      - run: sudo npm install --global --unsafe-perm now
-      - run: now --token $ZEIT_TOKEN --target=staging
+            - ./node_modules
+  deploy-staging:
+    docker:
+      - image: circleci/node:10.16.3
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Build
+          command: yarn build
+      - run:
+          name: Install now
+          command: sudo npm install --global --unsafe-perm now
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: Deploy to staging
+          command: now --token $ZEIT_TOKEN --target=staging
+  deploy-production:
+    docker:
+      - image: circleci/node:10.16.3
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Build
+          command: yarn build
+      - run:
+          name: Install now
+          command: sudo npm install --global --unsafe-perm now
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: Deploy to production
+          command: now --token $ZEIT_TOKEN --prod
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - test
+      - deploy-staging:
+          requires:
+            - test
+          filters:
+            branches:
+              ignore: /master/
+      - deploy-production:
+          requires:
+            - test
+          filters:
+            branches:
+              only:
+                - master
