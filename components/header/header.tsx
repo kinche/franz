@@ -1,5 +1,5 @@
 // Packages
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { autoBind } from 'react-extras'
 
 // Components
@@ -13,7 +13,7 @@ import { spacing } from '../../ui/theme'
 import { APPEARANCE_PRIMARY_SUBTLE } from '../../utils/constants'
 import { saveCookie } from '../../utils/cookies'
 
-export class HomeNavigation extends Component {
+export class Header extends PureComponent {
   constructor(props: any) {
     super(props)
 
@@ -40,8 +40,7 @@ export class HomeNavigation extends Component {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding-top: ${spacing.large};
-            padding-bottom: ${spacing.large};
+            padding: ${spacing.xxxLarge};
           }
         `}</style>
       </header>
