@@ -23,7 +23,7 @@ export class PageTitle extends PureComponent<PageTitleProps> {
         <style jsx={true}>{`
           section {
             padding-top: ${spacing.xxxHuge};
-            padding-bottom: ${spacing.xxxHuge};
+            padding-bottom: ${spacing.huge};
             display: flex;
             align-items: center;
             justify-content: space-between;
