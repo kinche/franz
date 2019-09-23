@@ -1,0 +1,19 @@
+{
+  "name": "franz",
+  "scope": "bukinoshita",
+  "version": 2,
+  "builds": [{ "src": "next.config.js", "use": "@now/next" }],
+  "build": {
+    "env": {
+      "AUTHENTICATION_SERVICE": "@franz-staging-authentication-service",
+      "FRONTEND_URL": "@franz-staging-frontend-url",
+      "KINCHE_COOKIES_DOMAIN": "@kinche-staging-cookies-domain",
+      "KINCHE_COOKIES_REDIRECT": "@kinche-staging-cookies-redirect",
+      "KINCHE_COOKIES_TOKEN": "@kinche-staging-cookies-token",
+      "STATICKIT_ID": "@franz-staging-statickit-id"
+    }
+  },
+  "github": {
+    "enabled": false
+  }
+}
