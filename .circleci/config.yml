@@ -36,7 +36,7 @@ jobs:
             - ./node_modules
       - run:
           name: Deploy to staging
-          command: now --token $ZEIT_TOKEN --target=staging
+          command: now --token $ZEIT_TOKEN --target=staging --local-config now.staging.json
   deploy-production:
     docker:
       - image: circleci/node:10.16.3
