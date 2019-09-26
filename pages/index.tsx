@@ -1,6 +1,9 @@
 // Packages
 import React, { Component } from 'react'
 
+//HOCs
+import withAuth from '../hocs/with-auth'
+
 // Layouts
 import Page from '../layouts/page'
 
@@ -19,4 +22,4 @@ class Home extends Component {
   }
 }
 
-export default Home
+export default withAuth(Home)
