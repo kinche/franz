@@ -1,19 +1,23 @@
 // Packages
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { For } from 'react-extras'
+
+// HOCs
+import withAuth from '../../hocs/with-auth'
 
 // Layouts
 import Page from '../../layouts/page'
 
 // Components
-import { RepositoryPreview } from '../../components/repository-preview'
+import { Header } from '../../components/header'
 import { PageTitle } from '../../components/page-title'
+import { RepositoryPreview } from '../../components/repository-preview'
 
 // UI
 import { Button } from '../../ui/button'
 import { Row } from '../../ui/row'
 
-class Dashboard extends Component<{ repositories: any }> {
+class Dashboard extends Component<{ repositories: any; user: any }> {
   static getInitialProps() {
     const data = [
       {
@@ -32,10 +36,12 @@ class Dashboard extends Component<{ repositories: any }> {
   }
 
   render() {
-    const { repositories } = this.props
+    const { repositories, user } = this.props
 
     return (
       <Page>
+        <Header user={user} />
+
         <Row style={{ maxWidth: '960px' }}>
           <PageTitle title="Repositories" subtitle="You have 17 active repositories.">
             <Button type="button">Add repository</Button>
@@ -57,4 +63,4 @@ class Dashboard extends Component<{ repositories: any }> {
   }
 }
 
-export default Dashboard
+export default withAuth(Dashboard)

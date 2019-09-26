@@ -1,6 +1,6 @@
 // Packages
 import React, { PureComponent } from 'react'
-import { autoBind } from 'react-extras'
+import { autoBind, Choose } from 'react-extras'
 
 // Components
 import { Logo } from '../../components/logo'
@@ -13,7 +13,7 @@ import { spacing } from '../../ui/theme'
 import { APPEARANCE_PRIMARY_SUBTLE } from '../../utils/constants'
 import { saveCookie } from '../../utils/cookies'
 
-export class Header extends PureComponent {
+export class Header extends PureComponent<{ user?: any }> {
   constructor(props: any) {
     super(props)
 
@@ -27,13 +27,23 @@ export class Header extends PureComponent {
   }
 
   render() {
+    const { user } = this.props
+
     return (
       <header>
         <Logo size="38px" />
 
-        <Button type="button" appearance={APPEARANCE_PRIMARY_SUBTLE} onClick={this.onSignIn}>
-          Sign in
-        </Button>
+        <Choose>
+          <Choose.When condition={Boolean(user)}>
+            <span>{user && user.name}</span>
+          </Choose.When>
+
+          <Choose.Otherwise>
+            <Button type="button" appearance={APPEARANCE_PRIMARY_SUBTLE} onClick={this.onSignIn}>
+              Sign in
+            </Button>
+          </Choose.Otherwise>
+        </Choose>
 
         <style jsx={true}>{`
           header {
