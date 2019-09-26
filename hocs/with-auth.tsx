@@ -1,6 +1,6 @@
 // Packages
 import React from 'react'
-import { NextPageContext, NextPage } from 'next'
+import { NextPageContext, NextComponentType } from 'next'
 import { withRouter } from 'next/router'
 
 // Utils
@@ -16,7 +16,7 @@ const onRedirect = (ctx: NextPageContext, location: string) => {
   }
 }
 
-const withAuth = (Page: NextPage) => {
+const withAuth = (Page: NextComponentType) => {
   const withAuth = (props: any) => <Page {...props} />
 
   withAuth.getInitialProps = async (context: NextPageContext) => {
