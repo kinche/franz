@@ -13,7 +13,10 @@ import { spacing } from '../../ui/theme'
 import { APPEARANCE_PRIMARY_SUBTLE } from '../../utils/constants'
 import { saveCookie } from '../../utils/cookies'
 
-export class Header extends PureComponent<{ user?: any }> {
+// Types
+import { HeaderProps } from './header.interface'
+
+export class Header extends PureComponent<HeaderProps> {
   constructor(props: any) {
     super(props)
 
